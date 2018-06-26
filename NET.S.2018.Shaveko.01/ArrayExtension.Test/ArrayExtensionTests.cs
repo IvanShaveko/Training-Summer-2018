@@ -9,8 +9,8 @@
         [TestMethod]
         public void MergeSort_Success()
         {
-            int[] array = { 1, 6, 3, 5, 9, 0 };
-            int[] expected = { 0, 1, 3, 5, 6, 9 };
+            int[] array = { 1, 6, 3, 4, 9, 0 };
+            int[] expected = { 0, 1, 3, 4, 6, 9 };
             int[] actual = array.MergeSort();
 
             CollectionAssert.AreEqual(expected, actual);

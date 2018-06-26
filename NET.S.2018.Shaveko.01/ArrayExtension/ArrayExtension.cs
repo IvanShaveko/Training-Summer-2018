@@ -11,7 +11,7 @@
         /// Extention method to start merge sort
         /// </summary>
         /// <param name="array">
-        /// The array
+        /// The array of integers
         /// </param>
         /// <returns>
         /// Return sorted array
@@ -38,7 +38,7 @@
         /// Method of merge sort
         /// </summary>
         /// <param name="array">
-        /// The array
+        /// The array of integers
         /// </param>
         /// <returns>
         /// Return the full merged array

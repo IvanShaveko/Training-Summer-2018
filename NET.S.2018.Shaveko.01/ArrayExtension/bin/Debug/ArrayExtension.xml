@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ArrayExtension</name>
+    </assembly>
+    <members>
+        <member name="T:ArrayExtension.ArrayExtension">
+            <summary>
+            The Integer Array Extention
+            </summary>
+        </member>
+        <member name="M:ArrayExtension.ArrayExtension.MergeSort(System.Int32[])">
+            <summary>
+            Extention method to start merge sort
+            </summary>
+            <param name="array">
+            The array
+            </param>
+            <returns>
+            Return sorted array
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Throw when array is null or empty
+            </exception>
+        </member>
+        <member name="M:ArrayExtension.ArrayExtension.DoMergeSort(System.Int32[])">
+            <summary>
+            Method of merge sort
+            </summary>
+            <param name="array">
+            The array
+            </param>
+            <returns>
+            The full megred array
+            </returns>
+        </member>
+        <member name="M:ArrayExtension.ArrayExtension.Merge(System.Int32[],System.Int32[])">
+            <summary>
+            Method which merges two part of array
+            </summary>
+            <param name="left">
+            The left part of array
+            </param>
+            <param name="right">
+            The right part of array
+            </param>
+            <returns>
+            Return merged two parts of array
+            </returns>
+        </member>
+        <member name="M:ArrayExtension.ArrayExtension.QuickSort(System.Int32[])">
+            <summary>
+            Extention method to start quick sort
+            </summary>
+            <param name="array">
+            The array
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Throw when array is null or empty
+            </exception>
+        </member>
+        <member name="M:ArrayExtension.ArrayExtension.DoQuickSort(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+            Method of quick sort
+            </summary>
+            <param name="array">
+            The array
+            </param>
+            <param name="first">
+            The first element of array
+            </param>
+            <param name="last">
+            The last element of array
+            </param>
+        </member>
+        <member name="M:ArrayExtension.ArrayExtension.Swap(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+            Method which swaps two elements of array 
+            </summary>
+            <param name="array">
+            The array 
+            </param>
+            <param name="i">
+            The first element which need swap
+            </param>
+            <param name="j">
+            The second element which need return
+            </param>
+        </member>
+    </members>
+</doc>

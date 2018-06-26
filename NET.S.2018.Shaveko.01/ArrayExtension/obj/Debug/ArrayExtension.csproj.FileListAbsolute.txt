@@ -1,0 +1,7 @@
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension\bin\Debug\ArrayExtension.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension\bin\Debug\ArrayExtension.pdb
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension\obj\Debug\ArrayExtension.csprojResolveAssemblyReference.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension\obj\Debug\ArrayExtension.csproj.CoreCompileInputs.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension\obj\Debug\ArrayExtension.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension\obj\Debug\ArrayExtension.pdb
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension\bin\Debug\ArrayExtension.xml

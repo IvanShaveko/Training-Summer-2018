@@ -1,0 +1,17 @@
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\ArrayExtension.Test.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\ArrayExtension.Test.pdb
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\ArrayExtension.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\ArrayExtension.pdb
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\obj\Debug\ArrayExtension.Test.csprojResolveAssemblyReference.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\obj\Debug\ArrayExtension.Test.csproj.CoreCompileInputs.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\obj\Debug\ArrayExtension.Test.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\obj\Debug\ArrayExtension.Test.pdb
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\ArrayExtension.Test.xml
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.01\ArrayExtension.Test\bin\Debug\ArrayExtension.xml

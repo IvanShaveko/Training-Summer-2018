@@ -41,7 +41,7 @@
         /// The array
         /// </param>
         /// <returns>
-        /// The full merged array
+        /// Return the full merged array
         /// </returns>
         private static int[] DoMergeSort(int[] array)
         {

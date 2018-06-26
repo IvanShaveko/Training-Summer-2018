@@ -31,7 +31,7 @@
             The array
             </param>
             <returns>
-            The full merged array
+            Return the full merged array
             </returns>
         </member>
         <member name="M:ArrayExtension.ArrayExtension.Merge(System.Int32[],System.Int32[])">

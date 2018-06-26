@@ -36,7 +36,7 @@
     <timestamps>
       <styleCop>2018.06.25 21:28:31.013</styleCop>
       <settingsFile>2018.06.26 17:30:56.113</settingsFile>
-      <sourceFile>2018.06.26 17:34:25.735</sourceFile>
+      <sourceFile>2018.06.26 20:12:41.197</sourceFile>
       <parser>2018.06.25 21:28:31.013</parser>
       <StyleCop.CSharp.DocumentationRules>2018.06.25 21:28:31.013</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>1585839075</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -61,17 +61,22 @@
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: 'Extention'</context>
-        <line>12</line>
+        <line>8</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: 'Extention'</context>
-        <line>26</line>
+        <line>22</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="ElementsMustBeOrderedByAccess" ruleCheckId="SA1202">
+        <context>All private methods must be placed after all public methods.</context>
+        <line>127</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementDocumentationMustBeSpelledCorrectly" ruleCheckId="SA1650">
         <context>The documentation text within the summary tag contains incorrectly spelled words: 'Extention'</context>
-        <line>50</line>
+        <line>127</line>
         <warning>False</warning>
       </violation>
     </violations>

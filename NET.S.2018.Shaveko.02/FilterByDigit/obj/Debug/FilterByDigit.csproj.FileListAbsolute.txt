@@ -1,0 +1,6 @@
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\FilterByDigit\bin\Debug\FilterByDigit.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\FilterByDigit\bin\Debug\FilterByDigit.pdb
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\FilterByDigit\obj\Debug\FilterByDigit.csprojResolveAssemblyReference.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\FilterByDigit\obj\Debug\FilterByDigit.csproj.CoreCompileInputs.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\FilterByDigit\obj\Debug\FilterByDigit.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\FilterByDigit\obj\Debug\FilterByDigit.pdb

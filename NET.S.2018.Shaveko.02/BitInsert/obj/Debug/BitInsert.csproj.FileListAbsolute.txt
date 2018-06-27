@@ -1,0 +1,6 @@
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\BitInsert\bin\Debug\BitInsert.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\BitInsert\bin\Debug\BitInsert.pdb
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\BitInsert\obj\Debug\BitInsert.csprojResolveAssemblyReference.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\BitInsert\obj\Debug\BitInsert.csproj.CoreCompileInputs.cache
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\BitInsert\obj\Debug\BitInsert.dll
+D:\Курсы\Training-Summer-2018\NET.S.2018.Shaveko.02\BitInsert\obj\Debug\BitInsert.pdb

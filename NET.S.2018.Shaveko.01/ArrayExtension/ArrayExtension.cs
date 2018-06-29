@@ -7,112 +7,65 @@
     /// </summary>
     public static class ArrayExtension
     {
-        /// <summary>
-        /// Extention method to start merge sort
-        /// </summary>
+
+        ///<summary>
+        /// Method to start merge sort with 3 argument
+        /// </summary>      
         /// <param name="array">
-        /// The array of integers
+        /// The array
         /// </param>
-        /// <returns>
-        /// Return sorted array
-        /// </returns>
+        /// <param name="low">
+        /// Left border of array
+        /// </param>
+        /// <param name="high">
+        /// Right border of array
+        /// </param>
         /// <exception cref="ArgumentNullException">
-        /// Throw when array is null or empty
+        /// Throw when array is null
         /// </exception>
-        public static int[] MergeSort(this int[] array)
+        public static void MergeSort(this int[] array, int low, int high)
         {
             if (array == null)
             {
                 throw new ArgumentNullException(nameof(array));
             }
 
-            if (array.Length == 1)
+            if (array.Length == 0 || array.Length == 1)
             {
-                return array;
+                return;
             }
 
-            return DoMergeSort(array);
+            if (low < high)
+            {
+                int middle = (low / 2) + (high / 2);
+                MergeSort(array, low, middle);
+                MergeSort(array, middle + 1, high);
+                Merge(array, low, middle, high);
+            }
         }
 
         /// <summary>
-        /// Method of merge sort
+        /// Method to start merge sort with one argument
         /// </summary>
         /// <param name="array">
-        /// The array of integers
+        /// The array
         /// </param>
-        /// <returns>
-        /// Return the full merged array
-        /// </returns>
-        private static int[] DoMergeSort(int[] array)
+        /// <exception cref="ArgumentNullException">
+        /// Throw when array is null
+        /// </exception>
+        public static void MergeSort(this int[] array)
         {
-            int[] left = new int[array.Length / 2];
-            int[] right = new int[array.Length - left.Length];
-
-            for (int i = 0; i < left.Length; i++)
+            if (array == null)
             {
-                left[i] = array[i];
+                throw new ArgumentNullException(nameof(array));
             }
 
-            for (int i = 0; i < right.Length; i++)
+            if (array.Length == 0 || array.Length == 1)
             {
-                right[i] = array[left.Length + i];
+                return;
             }
 
-            if (left.Length > 1)
-            {
-                left = DoMergeSort(left);
-            }
-
-            if (right.Length > 1)
-            {
-                right = DoMergeSort(right);
-            }
-
-            return Merge(left, right);
-        }
-
-        /// <summary>
-        /// Method which merges two part of array
-        /// </summary>
-        /// <param name="left">
-        /// The left part of array
-        /// </param>
-        /// <param name="right">
-        /// The right part of array
-        /// </param>
-        /// <returns>
-        /// Return merged two parts of array
-        /// </returns>
-        private static int[] Merge(int[] left, int[] right)
-        {
-            int[] array = new int[left.Length + right.Length];
-            int l = 0;
-            int r = 0;
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (l < left.Length && r < right.Length)
-                {
-                    if (left[l] > right[r])
-                    {
-                        array[i] = right[r++];
-                    }
-                    else
-                    {
-                        array[i] = left[l++];
-                    }
-                }
-                else if (l < left.Length)
-                {
-                    array[i] = left[l++];
-                }
-                else
-                {
-                    array[i] = right[r++];
-                }
-            }
-
-            return array;
+            MergeSort(array, 0, array.Length - 1);
         }
 
         /// <summary>
@@ -138,6 +91,71 @@
 
             DoQuickSort(array, 0, array.Length - 1);
         }
+
+        /// <summary>
+        /// Method which merged two part of array
+        /// </summary>
+        /// <param name="array">
+        /// The array
+        /// </param>
+        /// <param name="low">
+        /// Left border of array
+        /// </param>
+        /// <param name="middle">
+        /// Middle position
+        /// </param>
+        /// <param name="high">
+        /// Right border of array
+        /// </param>
+        private static void Merge(int[] array, int low, int middle, int high)
+        {
+
+            int left = low;
+            int right = middle + 1;
+            int[] tmp = new int[(high - low) + 1];
+            int tmpIndex = 0;
+
+            while ((left <= middle) && (right <= high))
+            {
+                if (array[left] < array[right])
+                {
+                    tmp[tmpIndex] = array[left];
+                    left = left + 1;
+                }
+                else
+                {
+                    tmp[tmpIndex] = array[right];
+                    right = right + 1;
+                }
+                tmpIndex = tmpIndex + 1;
+            }
+
+            if (left <= middle)
+            {
+                while (left <= middle)
+                {
+                    tmp[tmpIndex] = array[left];
+                    left = left + 1;
+                    tmpIndex = tmpIndex + 1;
+                }
+            }
+
+            if (right <= high)
+            {
+                while (right <= high)
+                {
+                    tmp[tmpIndex] = array[right];
+                    right = right + 1;
+                    tmpIndex = tmpIndex + 1;
+                }
+            }
+
+            for (int i = 0; i < tmp.Length; i++)
+            {
+                array[low + i] = tmp[i];
+            }
+        }
+
 
         /// <summary>
         /// Method of quick sort

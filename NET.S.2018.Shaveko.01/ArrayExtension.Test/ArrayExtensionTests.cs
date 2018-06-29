@@ -11,9 +11,9 @@
         {
             int[] array = { 1, 6, 3, 4, 9, 0 };
             int[] expected = { 0, 1, 3, 4, 6, 9 };
-            int[] actual = array.MergeSort();
+            array.MergeSort();
 
-            CollectionAssert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, array);
         }
 
         [TestMethod, ExpectedException(typeof(ArgumentNullException))]
@@ -21,7 +21,7 @@
         {
             int[] array = null;
 
-            int[] actual = array.MergeSort();
+            array.MergeSort();
         }
 
         [TestMethod]
@@ -41,6 +41,55 @@
             int[] array = null;
 
             array.QuickSort();
+        }
+
+        bool IsSorted(int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i] > array[i + 1])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        [TestMethod]
+        public void MergeSort_WithBigLength_Sucess()
+        {
+            Random randomNumber = new Random();
+            int[] array = new int[100000];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = randomNumber.Next();
+            }
+
+            array.MergeSort();
+
+            if (!IsSorted(array))
+            {
+                Assert.Fail();
+            }
+        }
+
+        [TestMethod]
+        public void QuickSort_WithBigLength_Sucess()
+        {
+            Random randomNumber = new Random();
+            int[] array = new int[1000000];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = randomNumber.Next();
+            }
+
+            array.QuickSort();
+
+            if (!IsSorted(array))
+            {
+                Assert.Fail();
+            }
         }
     }
 }

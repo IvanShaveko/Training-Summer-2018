@@ -9,44 +9,33 @@
             The Integer Array Extention
             </summary>
         </member>
+        <member name="M:ArrayExtension.ArrayExtension.MergeSort(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+             Method to start merge sort with 3 argument
+             </summary>      
+             <param name="array">
+             The array
+             </param>
+             <param name="low">
+             Left border of array
+             </param>
+             <param name="high">
+             Right border of array
+             </param>
+             <exception cref="T:System.ArgumentNullException">
+             Throw when array is null
+             </exception>
+        </member>
         <member name="M:ArrayExtension.ArrayExtension.MergeSort(System.Int32[])">
             <summary>
-            Extention method to start merge sort
+            Method to start merge sort with one argument
             </summary>
             <param name="array">
             The array
             </param>
-            <returns>
-            Return sorted array
-            </returns>
             <exception cref="T:System.ArgumentNullException">
-            Throw when array is null or empty
+            Throw when array is null
             </exception>
-        </member>
-        <member name="M:ArrayExtension.ArrayExtension.DoMergeSort(System.Int32[])">
-            <summary>
-            Method of merge sort
-            </summary>
-            <param name="array">
-            The array
-            </param>
-            <returns>
-            Return the full merged array
-            </returns>
-        </member>
-        <member name="M:ArrayExtension.ArrayExtension.Merge(System.Int32[],System.Int32[])">
-            <summary>
-            Method which merges two part of array
-            </summary>
-            <param name="left">
-            The left part of array
-            </param>
-            <param name="right">
-            The right part of array
-            </param>
-            <returns>
-            Return merged two parts of array
-            </returns>
         </member>
         <member name="M:ArrayExtension.ArrayExtension.QuickSort(System.Int32[])">
             <summary>
@@ -58,6 +47,23 @@
             <exception cref="T:System.ArgumentNullException">
             Throw when array is null or empty
             </exception>
+        </member>
+        <member name="M:ArrayExtension.ArrayExtension.Merge(System.Int32[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Method which merged two part of array
+            </summary>
+            <param name="array">
+            The array
+            </param>
+            <param name="low">
+            Left border of array
+            </param>
+            <param name="middle">
+            Middle position
+            </param>
+            <param name="high">
+            Right border of array
+            </param>
         </member>
         <member name="M:ArrayExtension.ArrayExtension.DoQuickSort(System.Int32[],System.Int32,System.Int32)">
             <summary>

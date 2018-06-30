@@ -188,7 +188,7 @@
 
                 if (i <= j)
                 {
-                    Swap(array, i++, j--);
+                    Swap(ref array[i++], ref array[j--]);
                 }
             }
 
@@ -206,20 +206,17 @@
         /// <summary>
         /// Method which swaps two elements of array 
         /// </summary>
-        /// <param name="array">
-        /// The array 
-        /// </param>
         /// <param name="i">
         /// The first element which need swap
         /// </param>
         /// <param name="j">
         /// The second element which need return
         /// </param>
-        private static void Swap(int[] array, int i, int j)
+        private static void Swap(ref int i,ref int j)
         {
-            int tmp = array[i];
-            array[i] = array[j];
-            array[j] = tmp;
+            int tmp = i;
+            i = j;
+            j = tmp;
         }
     }
 }

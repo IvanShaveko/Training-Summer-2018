@@ -79,7 +79,7 @@
             The last element of array
             </param>
         </member>
-        <member name="M:ArrayExtension.ArrayExtension.Swap(System.Int32[],System.Int32,System.Int32)">
+        <member name="M:ArrayExtension.ArrayExtension.Swap(System.Int32@,System.Int32@)">
             <summary>
             Method which swaps two elements of array 
             </summary>

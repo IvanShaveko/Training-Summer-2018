@@ -6,8 +6,29 @@ using System.Threading.Tasks;
 
 namespace NewtonMethod
 {
+    /// <summary>
+    /// Newtonian method for finding the root of n degree
+    /// </summary>
     public static class NewtonMethodSqrt
     {
+        /// <summary>
+        /// Newtonian method
+        /// </summary>
+        /// <param name="a">
+        /// The number
+        /// </param>
+        /// <param name="n">
+        /// The degree
+        /// </param>
+        /// <param name="precision">
+        /// The accurancy
+        /// </param>
+        /// <returns>
+        /// Root of number 
+        /// </returns>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Throw when incorrect accurancy, degree of root or number and degree of root
+        /// </exception>
         public static double FindNthRoot(double a, int n, double precision)
         {
             if (precision < 0)

@@ -42,7 +42,7 @@ namespace NextBiggerNumber
                 if (array[i] > array[i - 1])
                 {
                     Array.Sort(array, i, array.Length - i);
-                    SwapElement(array,i);
+                    SwapElement(array, i - 1);
                     break;
                 }
             }
@@ -108,9 +108,9 @@ namespace NextBiggerNumber
         {
             for (int i = index; i < array.Length; i++)
             {
-                if (array[i] > array[index - 1])
+                if (array[i] > array[index])
                 {
-                    Swap(ref array[i], ref array[index - 1]);
+                    Swap(ref array[i], ref array[index]);
                     break;
                 }
             }

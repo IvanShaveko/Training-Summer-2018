@@ -14,10 +14,10 @@ namespace NewtonMethod
         /// <summary>
         /// Newtonian method
         /// </summary>
-        /// <param name="a">
+        /// <param name="number">
         /// The number
         /// </param>
-        /// <param name="n">
+        /// <param name="degree">
         /// The degree
         /// </param>
         /// <param name="precision">
@@ -29,33 +29,33 @@ namespace NewtonMethod
         /// <exception cref="ArgumentOutOfRangeException">
         /// Throw when incorrect accurancy, degree of root or number and degree of root
         /// </exception>
-        public static double FindNthRoot(double a, int n, double precision)
+        public static double FindNthRoot(double number, int degree, double precision)
         {
-            if (precision < 0)
+            if (precision <= 0 || precision >= 1)
             {
-                throw new ArgumentOutOfRangeException($"Incorret accurancy");
+                throw new ArgumentOutOfRangeException($"Incorret {nameof(precision)}");
             }
 
-            if (n < 0)
+            if (degree < 0)
             {
                 throw new ArgumentOutOfRangeException($"Incorrect degree of root");
             }
 
-            if ((a < 0) && (n%2 == 0))
+            if (number < 0 && degree % 2 == 0)
             {
                 throw new ArgumentOutOfRangeException($"Incorrect number and degree of root");
             }
 
-            double x0 = 1;
-            double x1 = (1.0 / n) * ((n - 1) * x0 + a / Math.Pow(x0, n - 1));
+            double suppositious = 1;
+            double next = (1.0 / degree) * ((degree - 1) * suppositious + number / Math.Pow(suppositious, degree - 1));
 
-            while (Math.Abs(x1 - x0) > precision)
+            while (Math.Abs(next - suppositious) > precision)
             {
-                x0 = x1;
-                x1 = (1.0 / n) * ((n - 1) * x0 + a / Math.Pow(x0, n - 1));
+                suppositious = next;
+                next = (1.0 / degree) * ((degree - 1) * suppositious + number / Math.Pow(suppositious, degree - 1));
             }
 
-            return x1;
+            return next;
         }
     }
 }

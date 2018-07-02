@@ -43,18 +43,6 @@
             array.QuickSort();
         }
 
-        bool IsSorted(int[] array)
-        {
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                if (array[i] > array[i + 1])
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
 
         [TestMethod]
         public void MergeSort_WithBigLength_Sucess()
@@ -90,6 +78,19 @@
             {
                 Assert.Fail();
             }
+        }
+
+        private bool IsSorted(int[] array)
+        {
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i] > array[i + 1])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

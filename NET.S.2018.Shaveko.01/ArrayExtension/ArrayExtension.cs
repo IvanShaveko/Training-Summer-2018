@@ -127,6 +127,7 @@
                     tmp[tmpIndex] = array[right];
                     right = right + 1;
                 }
+
                 tmpIndex = tmpIndex + 1;
             }
 
@@ -155,7 +156,6 @@
                 array[low + i] = tmp[i];
             }
         }
-
 
         /// <summary>
         /// Method of quick sort

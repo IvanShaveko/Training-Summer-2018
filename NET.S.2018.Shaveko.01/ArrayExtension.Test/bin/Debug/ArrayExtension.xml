@@ -83,9 +83,6 @@
             <summary>
             Method which swaps two elements of array 
             </summary>
-            <param name="array">
-            The array 
-            </param>
             <param name="i">
             The first element which need swap
             </param>

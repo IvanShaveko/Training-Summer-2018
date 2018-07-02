@@ -56,6 +56,43 @@ namespace FilterByDigit
         }
 
         /// <summary>
+        /// Start filter array by digit with help of string
+        /// </summary>
+        /// <returns>
+        /// Return filtered array
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Throw when array is null
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Throw when digit is out fo range 0 to 9
+        /// </exception>
+        public static int[] FilterDigitWithString(this int[] array, int digit)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
+            if (digit < 0 || digit > 9)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (IsDigitWithString(array[i], digit))
+                {
+                    list.Add(array[i]);
+                }
+            }
+
+            return list.ToArray();
+        }
+
+        /// <summary>
         /// Check contains number this digit
         /// </summary>
         /// <param name="number">
@@ -82,5 +119,23 @@ namespace FilterByDigit
 
             return false;
         }
+
+        /// <summary>
+        /// Check contains number this digit with help of string
+        /// </summary>
+        /// <param name="number">
+        /// The number
+        /// </param>
+        /// <param name="digit">
+        /// The digit 
+        /// </param>
+        /// <returns>
+        /// Return true if number contains digit or return false if number doesn't contains digit
+        /// </returns>
+        private static bool IsDigitWithString(int number, int digit)
+        {
+            return number.ToString().Contains(digit.ToString());
+        }
+
     }
 }

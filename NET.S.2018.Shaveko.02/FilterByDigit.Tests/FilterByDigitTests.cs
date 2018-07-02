@@ -19,6 +19,17 @@ namespace FilterByDigit.Tests
         }
 
         [TestMethod]
+        public void FilterDigitWithString_WithDigit7_Success()
+        {
+            int[] array = { 7, 1, 2, 3, 4, 5, 6, 7, 68, 69, 70, 15, 17 };
+            int digit = 7;
+            int[] actual = array.FilterDigitWithString(digit);
+            int[] expected = { 7, 7, 70, 17 };
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void FilterDigit_WithNegativeNumbers_Success()
         {
             int[] array = { -17, 25, 13, 86, -7, -7, 123, 5, 6, -73, 13};

@@ -19,7 +19,7 @@ namespace FindGCD
         /// The first number
         /// </param>
         /// <param name="b">
-        /// The second numbers
+        /// The second number
         /// </param>
         /// <returns>
         /// GCD of numbers
@@ -35,7 +35,27 @@ namespace FindGCD
         }
 
         /// <summary>
-        /// Find GCD of three or more numbers by Euclidian method
+        /// Find GCD of three numbers by Euclidian method
+        /// </summary>
+        /// <param name="a">
+        /// The first number
+        /// </param>
+        /// <param name="b">
+        /// The second number
+        /// </param>
+        /// <param name="c">
+        /// The third number
+        /// </param>
+        /// <returns>
+        /// Return GCD of three numbers
+        /// </returns>
+        public static int FindGcdEuclidianMethod(int a, int b, int c)
+        {
+            return FindGcdEuclidianMethod(FindGcdEuclidianMethod(a, b), c);
+        }
+
+        /// <summary>
+        /// Find GCD of patams numbers by Euclidian method
         /// </summary>
         /// <param name="numbers">
         /// Numbers
@@ -58,8 +78,8 @@ namespace FindGCD
                 throw new ArgumentException($"Length of array is 0");
             }
 
-            int tmp = FindGcdEuclidianMethod(numbers[0], numbers[1]);
-            for (int i = 2; i < numbers.Length; i++)
+            int tmp = numbers[0];
+            for (int i = 1; i < numbers.Length; i++)
             {
                 tmp = FindGcdEuclidianMethod(tmp, numbers[i]);
             }
@@ -70,22 +90,88 @@ namespace FindGCD
         /// <summary>
         /// Method to get time of working FindGcdEuclidianMethod
         /// </summary>
-        /// <param name="numbers">
-        /// The numbers
+        /// <param name="time">
+        /// The time of working
+        /// </param>
+        /// <param name="first">
+        /// The first number
+        /// </param>
+        /// <param name="second">
+        /// The second number
         /// </param>
         /// <returns>
-        /// Time of working FindGcdEuclidianMethod
+        /// GCD of numbers
         /// </returns>
-        public static TimeSpan GetTimeEuclidianMethod(params int[] numbers)
+        public static int GetTimeEuclidianMethod(out TimeSpan time, int first, int second)
         {
             Stopwatch timeWorking = new Stopwatch();
             timeWorking.Start();
 
-            FindGcdEuclidianMethod(numbers);
+            int result = FindGcdEuclidianMethod(first, second);
 
             timeWorking.Stop();
 
-            return timeWorking.Elapsed;
+            time = timeWorking.Elapsed;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Method to get time of working FindGcdEuclidianMethod
+        /// </summary>
+        /// <param name="time">
+        /// The time of working
+        /// </param>
+        /// <param name="first">
+        /// The first number
+        /// </param>
+        /// <param name="second">
+        /// The second number
+        /// </param>
+        /// <param name="third">
+        /// The third number
+        /// </param>
+        /// <returns>
+        /// GCD of numbers
+        /// </returns>
+        public static int GetTimeEuclidianMethod(out TimeSpan time, int first, int second, int third)
+        {
+            Stopwatch timeWorking = new Stopwatch();
+            timeWorking.Start();
+
+            int result = FindGcdEuclidianMethod(first, second, third);
+
+            timeWorking.Stop();
+
+            time = timeWorking.Elapsed;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Method to get time of working FindGcdEuclidianMethod
+        /// </summary>
+        /// <param name="time">
+        /// The time of working
+        /// </param>
+        /// <param name="numbers">
+        /// The numbers
+        /// </param>
+        /// <returns>
+        /// GCD of numbers
+        /// </returns>
+        public static int GetTimeEuclidianMethod(out TimeSpan time, params int[] numbers)
+        {
+            Stopwatch timeWorking = new Stopwatch();
+            timeWorking.Start();
+
+            int result = FindGcdEuclidianMethod(numbers);
+
+            timeWorking.Stop();
+
+            time = timeWorking.Elapsed;
+
+            return result;
         }
         
         /// <summary>
@@ -146,7 +232,27 @@ namespace FindGCD
         }
 
         /// <summary>
-        /// Find GCD of three or more numbers by SteinMethod
+        /// Find GCD of three numbers by Stein method
+        /// </summary>
+        /// <param name="a">
+        /// The first number
+        /// </param>
+        /// <param name="b">
+        /// The second number
+        /// </param>
+        /// <param name="c">
+        /// The third number
+        /// </param>
+        /// <returns>
+        /// Return GCD of three numbers
+        /// </returns>
+        public static int FindGcdSteinMethod(int a, int b, int c)
+        {
+            return FindGcdSteinMethod(FindGcdEuclidianMethod(a, b), c);
+        }
+
+        /// <summary>
+        /// Find GCD of params numbers by SteinMethod
         /// </summary>
         /// <param name="numbers">
         /// The numbers
@@ -169,8 +275,8 @@ namespace FindGCD
                 throw new ArgumentException($"Length of array is 0");
             }
 
-            int tmp = FindGcdSteinMethod(numbers[0], numbers[1]);
-            for (int i = 2; i < numbers.Length; i++)
+            int tmp = numbers[0];
+            for (int i = 1; i < numbers.Length; i++)
             {
                 tmp = FindGcdSteinMethod(tmp, numbers[i]);
             }
@@ -179,24 +285,90 @@ namespace FindGCD
         }
 
         /// <summary>
+        /// Method to get time of working FindGcdEuclidianMethod
+        /// </summary>
+        /// <param name="time">
+        /// The time of working
+        /// </param>
+        /// <param name="first">
+        /// The first number
+        /// </param>
+        /// <param name="second">
+        /// The second number
+        /// </param>
+        /// <returns>
+        /// GCD of numbers
+        /// </returns>
+        public static int GetTimeSteinMethod(out TimeSpan time, int first, int second)
+        {
+            Stopwatch timeWorking = new Stopwatch();
+            timeWorking.Start();
+
+            int result = FindGcdSteinMethod(first, second);
+
+            timeWorking.Stop();
+
+            time = timeWorking.Elapsed;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Method to get time of working FindGcdEuclidianMethod
+        /// </summary>
+        /// <param name="time">
+        /// The time of working
+        /// </param>
+        /// <param name="first">
+        /// The first number
+        /// </param>
+        /// <param name="second">
+        /// The second number
+        /// </param>
+        /// <param name="third">
+        /// The third number
+        /// </param>
+        /// <returns>
+        /// GCD of numbers
+        /// </returns>
+        public static int GetTimeSteinMethod(out TimeSpan time, int first, int second, int third)
+        {
+            Stopwatch timeWorking = new Stopwatch();
+            timeWorking.Start();
+
+            int result = FindGcdSteinMethod(first, second, third);
+
+            timeWorking.Stop();
+
+            time = timeWorking.Elapsed;
+
+            return result;
+        }
+
+        /// <summary>
         /// Method to get time of working FindGcdSteinMethod
         /// </summary>
+        /// <param name="time">
+        /// Time of workung
+        /// </param>
         /// <param name="numbers">
         /// The numbers
         /// </param>
         /// <returns>
         /// Time of working FindGcdSteinMethod
         /// </returns>
-        public static TimeSpan GetTimeSteinMethod(params int[] numbers)
+        public static int GetTimeSteinMethod(out TimeSpan time, params int[] numbers)
         {
             Stopwatch timeWorking = new Stopwatch();
             timeWorking.Start();
 
-            FindGcdSteinMethod(numbers);
+            int result = FindGcdSteinMethod(numbers);
 
             timeWorking.Stop();
 
-            return timeWorking.Elapsed;
+            time = timeWorking.Elapsed;
+
+            return result;
         }
     }
 }

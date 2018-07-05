@@ -61,13 +61,18 @@ namespace NextBiggerNumber
         /// </returns>
         private static bool IsBiggest(int number)
         {
-            int[] tmp = ToArray(number);
-            for (int i = 0; i < tmp.Length - 1; i++)
+            int prev = number % 10;
+            number /= 10;
+            while (number != 0)
             {
-                if (tmp[i] < tmp[i+1])
+                int next = number % 10;
+                if (prev > next)
                 {
                     return false;
                 }
+
+                number /= 10;
+                prev = next;
             }
 
             return true;

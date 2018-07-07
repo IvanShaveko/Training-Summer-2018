@@ -17,29 +17,29 @@ namespace StringExtension.Tests
         [TestCase("10", 5, ExpectedResult = 5)]
 
         [Test]
-        public int StringExtension_Number_Basis_Success(string number, int basis)
+        public int StringExtension_Number__base_Success(string number, int _base)
         {
-            return number.ConvertToDecimal(basis);
+            return number.ConvertToDecimal(_base);
         }
 
         [TestCase("764241", 20)]
         [TestCase("SA123", 2)]
         [TestCase("1AeF101", 2)]
-        public void StringExtension_Number_Basis_ArgumentException(string number, int basis)
+        public void StringExtension_Number__base_ArgumentException(string number, int _base)
         {
-            Assert.Throws<ArgumentException>(() => number.ConvertToDecimal(basis));
+            Assert.Throws<ArgumentException>(() => number.ConvertToDecimal(_base));
         }
 
         [TestCase("11111111111111111111111111111111", 2)]
-        public void StringExtension_Number_Basis_OverflowException(string number, int basis)
+        public void StringExtension_Number__base_OverflowException(string number, int _base)
         {
-            Assert.Throws<OverflowException>(() => number.ConvertToDecimal(basis));
+            Assert.Throws<OverflowException>(() => number.ConvertToDecimal(_base));
         }
 
         [TestCase("", 16)]
-        public void StringExtension_Number_Basis_ArgumentNullException(string number, int basis)
+        public void StringExtension_Number__base_ArgumentNullException(string number, int _base)
         {
-            Assert.Throws<ArgumentNullException>(() => number.ConvertToDecimal(basis));
+            Assert.Throws<ArgumentNullException>(() => number.ConvertToDecimal(_base));
         }
     }
 }

@@ -14,6 +14,15 @@ namespace DoubleExtension
     {
         private const int BITS = 64;
 
+        /// <summary>
+        /// Convert double to IEEE
+        /// </summary>
+        /// <param name="number">
+        /// The number
+        /// </param>
+        /// <returns>
+        /// IEEE string
+        /// </returns>
         public static string DoubleToBinary(this double number)
         {
             DoubleToLongStruct convert = new DoubleToLongStruct{Double64Bits = number};

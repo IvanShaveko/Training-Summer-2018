@@ -85,7 +85,7 @@ namespace Polynomial
         /// </exception>
         public static Polynomial operator +(Polynomial firstPolynomial, Polynomial secondPolynomial)
         {
-            if (firstPolynomial == null || secondPolynomial == null)
+            if (firstPolynomial is null || secondPolynomial is null)
             {
                 throw new ArgumentException($"{nameof(firstPolynomial)} or {nameof(secondPolynomial)} is null");
             }
@@ -111,7 +111,7 @@ namespace Polynomial
         }
 
         /// <summary>
-        /// Overload operator --
+        /// Overload operator -
         /// </summary>
         /// <param name="firstPolynomial">
         /// The first polynom
@@ -127,7 +127,7 @@ namespace Polynomial
         /// </exception>
         public static Polynomial operator -(Polynomial firstPolynomial, Polynomial secondPolynomial)
         {
-            if (firstPolynomial == null || secondPolynomial == null)
+            if (firstPolynomial is null || secondPolynomial is null)
             {
                 throw new ArgumentException($"{nameof(firstPolynomial)} or {nameof(secondPolynomial)} is null");
             }
@@ -169,7 +169,7 @@ namespace Polynomial
         /// </exception>
         public static Polynomial operator *(Polynomial firstPolynomial, Polynomial secondPolynomial)
         {
-            if (firstPolynomial == null || secondPolynomial == null)
+            if (firstPolynomial is null || secondPolynomial is null)
             {
                 throw new ArgumentException($"{nameof(firstPolynomial)} or {nameof(secondPolynomial)} is null");
             }
@@ -206,11 +206,6 @@ namespace Polynomial
             if (obj is null)
             {
                 //throw new ArgumentException($"{nameof(obj)} should be not null");
-                return false;
-            }
-
-            if (obj.GetType() != GetType())
-            {
                 return false;
             }
 

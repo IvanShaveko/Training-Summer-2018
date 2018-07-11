@@ -33,7 +33,7 @@ namespace Customer
                 formatProvider = CultureInfo.CurrentCulture;
             }
 
-            switch (format.ToUpper())
+            switch (format)
             {
                 case "N": return string.Format(formatProvider,"{0}", Name);
                 case "P": return string.Format(formatProvider, "{0}", ContactPhone);

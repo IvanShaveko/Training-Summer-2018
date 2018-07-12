@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Polynomial
 {
-    public sealed class Polynomial
+    public sealed class Polynomial : ICloneable, IEquatable<Polynomial>
     {
         private readonly double[] _coefficients;
 
@@ -19,13 +19,12 @@ namespace Polynomial
         public Polynomial(params double[] coefficients)
         {
             _coefficients = coefficients;
-            Degree = coefficients.Length - 1;
         }
 
         /// <summary>
         /// Auto-property to get Degree
         /// </summary>
-        public int Degree { get; }
+        public int Degree => _coefficients.Length - 1;
 
         /// <summary>
         /// Overload operator ==
@@ -90,24 +89,17 @@ namespace Polynomial
                 throw new ArgumentException($"{nameof(firstPolynomial)} or {nameof(secondPolynomial)} is null");
             }
 
-            if (firstPolynomial.Degree < secondPolynomial.Degree)
+            bool comparison = firstPolynomial.Degree > secondPolynomial.Degree;
+
+            Polynomial larger = comparison ? firstPolynomial : secondPolynomial;
+            Polynomial shorter = comparison ? secondPolynomial : firstPolynomial;
+
+            for (int i = 0; i <= shorter.Degree; i++)
             {
-                double[] result = secondPolynomial._coefficients;
-                for (int i = 0; i <= firstPolynomial.Degree; i++)
-                {
-                    result[i] += firstPolynomial._coefficients[i];
-                }
-                return new Polynomial(result);
+                larger._coefficients[i] += shorter._coefficients[i];
             }
-            else
-            {
-                double[] result = firstPolynomial._coefficients;
-                for (int i = 0; i <= secondPolynomial.Degree; i++)
-                {
-                    result[i] += secondPolynomial._coefficients[i];
-                }
-                return new Polynomial(result);
-            }
+
+            return larger;
         }
 
         /// <summary>
@@ -132,24 +124,17 @@ namespace Polynomial
                 throw new ArgumentException($"{nameof(firstPolynomial)} or {nameof(secondPolynomial)} is null");
             }
 
-            if (firstPolynomial.Degree < secondPolynomial.Degree)
+            bool comparison = firstPolynomial.Degree > secondPolynomial.Degree;
+
+            Polynomial larger = comparison ? firstPolynomial  : secondPolynomial;
+            Polynomial shorter = comparison ? secondPolynomial : firstPolynomial;
+
+            for (int i = 0; i <= shorter.Degree; i++)
             {
-                double[] result = secondPolynomial._coefficients;
-                for (int i = 0; i <= firstPolynomial.Degree; i++)
-                {
-                    result[i] = Math.Round(firstPolynomial._coefficients[i] - result[i], 3);
-                }
-                return new Polynomial(result);
+                larger._coefficients[i] = Math.Round(firstPolynomial._coefficients[i] - secondPolynomial._coefficients[i], 3);
             }
-            else
-            {
-                double[] result = firstPolynomial._coefficients;
-                for (int i = 0; i <= secondPolynomial.Degree; i++)
-                {
-                    result[i] = Math.Round(result[i] - secondPolynomial._coefficients[i], 3);
-                }
-                return new Polynomial(result);
-            }
+
+            return larger;
         }
 
         /// <summary>
@@ -205,31 +190,10 @@ namespace Polynomial
         {
             if (obj is null)
             {
-                //throw new ArgumentException($"{nameof(obj)} should be not null");
                 return false;
             }
 
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            Polynomial otherPolynomial = (Polynomial) obj;
-
-            if (Degree != otherPolynomial.Degree)
-            {
-                return false;
-            }
-
-            for (int i = 0; i <= Degree; i++)
-            {
-                if (!_coefficients[i].Equals(otherPolynomial._coefficients[i]))
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return ReferenceEquals(this, obj) || this.Equals((Polynomial) obj);
         }
 
         /// <summary>
@@ -247,6 +211,59 @@ namespace Polynomial
             }
 
             return hascode;
+        }
+
+        /// <summary>
+        /// Clone polynom
+        /// </summary>
+        /// <returns>
+        /// Return cloned polynom
+        /// </returns>
+        public Polynomial Clone() => new Polynomial(_coefficients);
+
+        /// <summary>
+        /// Clone polyom
+        /// </summary>
+        /// <returns>
+        /// Return cloned polynom
+        /// </returns>
+        object ICloneable.Clone() => this.Clone();
+
+        /// <summary>
+        /// Method of interface IEquatable
+        /// </summary>
+        /// <param name="other">
+        /// Other polynomial
+        /// </param>
+        /// <returns>
+        /// True if the are equals or false if not
+        /// </returns>
+        public bool Equals(Polynomial other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (Degree != other.Degree)
+            {
+                return false;
+            }
+
+            for (int i = 0; i <= Degree; i++)
+            {
+                if (!_coefficients[i].Equals(other._coefficients[i]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>

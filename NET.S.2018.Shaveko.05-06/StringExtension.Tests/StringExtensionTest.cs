@@ -9,7 +9,6 @@ namespace StringExtension.Tests
     [TestFixture]
     public class StringExtensionTest
     {
-        [TestCase("0110111101100001100001010111111", 2, ExpectedResult = 934331071)]
         [TestCase("01101111011001100001010111111", 2, ExpectedResult = 233620159)]
         [TestCase("11101101111011001100001010", 2, ExpectedResult = 62370570)]
         [TestCase("1ACB67", 16, ExpectedResult = 1756007)]

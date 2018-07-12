@@ -1,9 +1,14 @@
-﻿using NUnit.Framework;
+﻿using System;
+using System.Globalization;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
-namespace Customer.Tests
+namespace CustomerFormatExtension.Test
 {
+    using Customer;
+
     [TestFixture]
-    public class CustomerTests
+    public class CustomerFormatExtensionTests
     {
         private readonly Customer _customer = new Customer("Jeffrey Richter", "+1 (425) 555-0100", 1000000);
 
@@ -14,9 +19,9 @@ namespace Customer.Tests
         [TestCase("C", ExpectedResult = "Jeffrey Richter +1 (425) 555-0100")]
 
         [Test]
-        public string Customer_IFormattable_ToString(string format)
+        public string CustomerFormatExtension_IFormattable_Format(string format)
         {
-            return _customer.ToString(format);
+            return new CustomerFormatExtension().Format(format, _customer, CultureInfo.CurrentCulture);
         }
     }
 }

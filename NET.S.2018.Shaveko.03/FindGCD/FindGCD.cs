@@ -61,7 +61,7 @@ namespace FindGCD
         /// Numbers
         /// </param>
         /// <exception cref="ArgumentException">
-        /// Throw when length of array is 0
+        /// Throw when length of array is 0 or it is null
         /// </exception>
         /// <returns>
         /// GCD of numbers
@@ -73,9 +73,9 @@ namespace FindGCD
                 return numbers[0];
             }
 
-            if (numbers.Length == 0)
+            if (numbers.Length == 0 || numbers == null)
             {
-                throw new ArgumentException($"Length of array is 0");
+                throw new ArgumentException($"{nameof(numbers)} must be initialized");
             }
 
             int tmp = numbers[0];
@@ -258,7 +258,7 @@ namespace FindGCD
         /// The numbers
         /// </param>
         /// <exception cref="ArgumentException">
-        /// Throw when length of array is 0
+        /// Throw when length of array is 0 or it is null
         /// </exception>
         /// <returns>
         /// GCD of numbers
@@ -270,9 +270,9 @@ namespace FindGCD
                 return numbers[0];
             }
 
-            if (numbers.Length == 0)
+            if (numbers.Length == 0 || numbers == null)
             {
-                throw new ArgumentException($"Length of array is 0");
+                throw new ArgumentException($"{nameof(numbers)} must be initialized");
             }
 
             int tmp = numbers[0];

@@ -8,6 +8,15 @@ namespace JaggedArrayExtencion
 {
     public static class InterfaceSort
     {
+        /// <summary>
+        /// Start method with help of Interface
+        /// </summary>
+        /// <param name="array">
+        /// Array
+        /// </param>
+        /// <param name="comparer">
+        /// Condition
+        /// </param>
         public static void SortByInterface(this int[][] array, IComparer<int[]> comparer)
         {
             array.Sort(comparer);

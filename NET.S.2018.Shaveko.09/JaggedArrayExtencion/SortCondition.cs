@@ -9,7 +9,7 @@ namespace JaggedArrayExtencion
     /// <summary>
     /// Increasing sums
     /// </summary>
-    public class IncreasingCondition: ICompare
+    public class IncreasingCondition: IComparer<int[]>
     { 
         /// <summary>
         /// Method which give us difference between sum
@@ -47,7 +47,7 @@ namespace JaggedArrayExtencion
     /// <summary>
     /// Decreasing sums
     /// </summary>
-    public class DecreasingCondition : ICompare
+    public class DecreasingCondition : IComparer<int[]>
     {
         /// <summary>
         /// Method which give us difference between sum
@@ -85,7 +85,7 @@ namespace JaggedArrayExtencion
     /// <summary>
     /// Increasing max
     /// </summary>
-    public class IncreasingMax : ICompare
+    public class IncreasingMax : IComparer<int[]>
     {
         /// <summary>
         /// Method which give us difference between max elements
@@ -123,7 +123,7 @@ namespace JaggedArrayExtencion
     /// <summary>
     /// DecreasingMax
     /// </summary>
-    public class DecreasingMax : ICompare
+    public class DecreasingMax : IComparer<int[]>
     {
         /// <summary>
         /// Method which give us difference between max elements
@@ -161,7 +161,7 @@ namespace JaggedArrayExtencion
     /// <summary>
     /// Increasing min
     /// </summary>
-    public class IncreasingMin : ICompare
+    public class IncreasingMin : IComparer<int[]>
     {
         /// <summary>
         /// Method which give us difference between min elements
@@ -199,7 +199,7 @@ namespace JaggedArrayExtencion
     /// <summary>
     /// Decreasing min
     /// </summary>
-    public class DecreasingMin : ICompare
+    public class DecreasingMin : IComparer<int[]>
     {
         /// <summary>
         /// Method which give us difference between min elements

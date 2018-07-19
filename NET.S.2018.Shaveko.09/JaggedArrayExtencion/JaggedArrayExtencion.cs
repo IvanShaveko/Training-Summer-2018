@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,18 @@ namespace JaggedArrayExtencion
     /// </summary>
     public static class JaggedArrayExtencion
     {
+        /// <summary>
+        /// Start bubble sort with help of delegate
+        /// </summary>
+        /// <param name="array">
+        /// Array
+        /// </param>
+        /// <param name="comparison">
+        /// Condition
+        /// </param>
+        public static void DelegateSort(this int[][] array, Comparison<int[]> comparison) =>
+            array.Sort(new SortByDelegate(comparison));
+
         /// <summary>
         /// Bubble sort
         /// </summary>
@@ -23,7 +36,7 @@ namespace JaggedArrayExtencion
         /// <exception cref="ArgumentNullException">
         /// Throw when array or condition in null
         /// </exception>
-        public static void Sort(this int[][] array, ICompare condition)
+        public static void Sort(this int[][] array, IComparer<int[]> condition)
         {
             if (array == null)
             {

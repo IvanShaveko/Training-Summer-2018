@@ -8,7 +8,7 @@ namespace JaggedArrayExtencion
 {
     public class SortByDelegate : IComparer<int[]>
     {
-        private Comparison<int[]> _comparison;
+        private readonly Comparison<int[]> _comparison;
 
         public SortByDelegate(Comparison<int[]> comparison)
         {

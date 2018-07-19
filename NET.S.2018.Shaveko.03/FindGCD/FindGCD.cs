@@ -49,10 +49,7 @@ namespace FindGCD
         /// <returns>
         /// Return GCD of three numbers
         /// </returns>
-        public static int FindGcdEuclidianMethod(int a, int b, int c)
-        {
-            return FindGcdEuclidianMethod(FindGcdEuclidianMethod(a, b), c);
-        }
+        public static int FindGcdEuclidianMethod(int a, int b, int c) => Gcd(FindGcdEuclidianMethod, a, b, c);
 
         /// <summary>
         /// Find GCD of patams numbers by Euclidian method
@@ -77,14 +74,8 @@ namespace FindGCD
             {
                 throw new ArgumentException($"{nameof(numbers)} must be initialized");
             }
-
-            int tmp = numbers[0];
-            for (int i = 1; i < numbers.Length; i++)
-            {
-                tmp = FindGcdEuclidianMethod(tmp, numbers[i]);
-            }
-
-            return tmp;
+            
+            return Gcd(FindGcdEuclidianMethod, numbers);
         }
 
         /// <summary>
@@ -139,7 +130,7 @@ namespace FindGCD
             Stopwatch timeWorking = new Stopwatch();
             timeWorking.Start();
 
-            int result = FindGcdEuclidianMethod(first, second, third);
+            int result = Gcd(FindGcdEuclidianMethod, first, second, third);
 
             timeWorking.Stop();
 
@@ -165,7 +156,7 @@ namespace FindGCD
             Stopwatch timeWorking = new Stopwatch();
             timeWorking.Start();
 
-            int result = FindGcdEuclidianMethod(numbers);
+            int result = Gcd(FindGcdEuclidianMethod, numbers);
 
             timeWorking.Stop();
 
@@ -246,10 +237,7 @@ namespace FindGCD
         /// <returns>
         /// Return GCD of three numbers
         /// </returns>
-        public static int FindGcdSteinMethod(int a, int b, int c)
-        {
-            return FindGcdSteinMethod(FindGcdEuclidianMethod(a, b), c);
-        }
+        public static int FindGcdSteinMethod(int a, int b, int c) => Gcd(FindGcdSteinMethod, a, b, c);
 
         /// <summary>
         /// Find GCD of params numbers by SteinMethod
@@ -275,13 +263,7 @@ namespace FindGCD
                 throw new ArgumentException($"{nameof(numbers)} must be initialized");
             }
 
-            int tmp = numbers[0];
-            for (int i = 1; i < numbers.Length; i++)
-            {
-                tmp = FindGcdSteinMethod(tmp, numbers[i]);
-            }
-
-            return tmp;
+            return Gcd(FindGcdSteinMethod, numbers);
         }
 
         /// <summary>
@@ -336,7 +318,7 @@ namespace FindGCD
             Stopwatch timeWorking = new Stopwatch();
             timeWorking.Start();
 
-            int result = FindGcdSteinMethod(first, second, third);
+            int result = Gcd(FindGcdSteinMethod, first, second, third);
 
             timeWorking.Stop();
 
@@ -362,13 +344,57 @@ namespace FindGCD
             Stopwatch timeWorking = new Stopwatch();
             timeWorking.Start();
 
-            int result = FindGcdSteinMethod(numbers);
+            int result = Gcd(FindGcdSteinMethod, numbers);
 
             timeWorking.Stop();
 
             time = timeWorking.Elapsed;
 
             return result;
+        }
+
+        /// <summary>
+        /// Find gCD with help of delegate
+        /// </summary>
+        /// <param name="gcdFunc">
+        /// Delegate of func
+        /// </param>
+        /// <param name="a">
+        /// First number
+        /// </param>
+        /// <param name="b">
+        /// Second number
+        /// </param>
+        /// <param name="c">
+        /// Third number
+        /// </param>
+        /// <returns>
+        /// GCD
+        /// </returns>
+        private static int Gcd(Func<int, int, int> gcdFunc, int a, int b, int c) => gcdFunc(gcdFunc(a, b), c);
+
+        /// <summary>
+        /// Find gCD with help of delegate
+        /// </summary>
+        /// <param name="gcdFunc">
+        /// Delegate of func
+        /// </param>
+        /// <param name="numbers">
+        /// Array of numbers
+        /// </param>
+        /// <returns>
+        /// GCD
+        /// </returns>
+        private static int Gcd(Func<int, int, int> gcdFunc, int[] numbers)
+        {
+            int tmp = gcdFunc(numbers[0], numbers[1]);
+
+            for (int i = 2; i < numbers.Length; i++)
+            {
+                tmp = gcdFunc(tmp, numbers[i]);
+            }
+
+            return tmp;
         }
     }
 }

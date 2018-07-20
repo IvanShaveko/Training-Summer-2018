@@ -43,7 +43,7 @@
     <Compile Include="InterfaceSort.cs" />
     <Compile Include="JaggedArrayExtencion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SortByDelegate.cs" />
+    <Compile Include="AdapterDelegate.cs" />
     <Compile Include="SortCondition.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,8 +21,8 @@ namespace JaggedArrayExtencion
         /// <param name="comparison">
         /// Condition
         /// </param>
-        public static void DelegateSort(this int[][] array, SortByDelegate comparison) =>
-            array.Sort(comparison);
+        public static void DelegateSort(this int[][] array, Comparison<int[]> comparison) =>
+            array.Sort(new AdapterDelegate(comparison));
 
         /// <summary>
         /// Bubble sort

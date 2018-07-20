@@ -34,7 +34,7 @@ namespace JaggedArrayExtencion
         /// <exception cref="ArgumentNullException">
         /// Throw when array or condition in null
         /// </exception>
-        public static void Sort(this int[][] array, SortByDelegate condition)
+        public static void Sort(this int[][] array, Comparison<int[]> condition)
         {
             if (array == null)
             {
@@ -50,7 +50,7 @@ namespace JaggedArrayExtencion
             {
                 for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (condition.Compare(array[i], array[j]) > 0)
+                    if (condition(array[i], array[j]) > 0)
                     {
                         Swap(ref array[i], ref array[j]);
                     }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace JaggedArrayExtencion
 {
-    public class SortByDelegate : IComparer<int[]>
+    public class AdapterDelegate : IComparer<int[]>
     {
         private readonly Comparison<int[]> _comparison;
 
-        public SortByDelegate(Comparison<int[]> comparison)
+        public AdapterDelegate(Comparison<int[]> comparison)
         {
             _comparison = comparison;
         }

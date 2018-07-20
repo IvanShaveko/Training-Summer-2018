@@ -191,7 +191,7 @@ namespace JaggedArrayExtension.Tests
                 new[] {33, 18, 44, 15}
             };
         
-            sourceInts.DelegateSort(new SortByDelegate(new IncreasingCondition().Compare));
+            sourceInts.DelegateSort(new IncreasingCondition().Compare);
 
             for (int i = 0; i < sourceInts.Length; i++)
             {

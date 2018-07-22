@@ -30,7 +30,7 @@ namespace Clock
         #endregion
 
         /// <summary>
-        /// Event to time out
+        /// Event to time out   
         /// </summary>
         public event EventHandler<TimeOutEventArgs> TimeOut = delegate { };
 

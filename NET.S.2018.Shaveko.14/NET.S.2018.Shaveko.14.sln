@@ -11,10 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchExtension", "Bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchExtension.Test", "BinarySearchExtension.Test\BinarySearchExtension.Test.csproj", "{4F4F5C55-44DC-446A-AA49-6B45952C8277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibExtension", "FibExtension\FibExtension.csproj", "{5AEFC1B0-9ECF-4D1A-A4E6-BE5CA0ECBB66}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibExtension.Tests", "FibExtension.Tests\FibExtension.Tests.csproj", "{0AA47462-0E40-4A42-B00D-C1AD56247DC8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,14 +33,6 @@ Global
 		{4F4F5C55-44DC-446A-AA49-6B45952C8277}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F4F5C55-44DC-446A-AA49-6B45952C8277}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F4F5C55-44DC-446A-AA49-6B45952C8277}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5AEFC1B0-9ECF-4D1A-A4E6-BE5CA0ECBB66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AEFC1B0-9ECF-4D1A-A4E6-BE5CA0ECBB66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AEFC1B0-9ECF-4D1A-A4E6-BE5CA0ECBB66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AEFC1B0-9ECF-4D1A-A4E6-BE5CA0ECBB66}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0AA47462-0E40-4A42-B00D-C1AD56247DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0AA47462-0E40-4A42-B00D-C1AD56247DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0AA47462-0E40-4A42-B00D-C1AD56247DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0AA47462-0E40-4A42-B00D-C1AD56247DC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

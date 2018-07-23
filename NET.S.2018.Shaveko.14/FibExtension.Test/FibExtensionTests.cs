@@ -18,6 +18,7 @@ namespace FibExtension.Test
                 yield return new TestCaseData(5).Returns(new BigInteger[] {0, 1, 1, 2, 3});
                 yield return new TestCaseData(10).Returns(new BigInteger[] {0, 1, 1, 2, 3, 5, 8, 13, 21, 34});
                 yield return new TestCaseData(1).Returns(new BigInteger[] {0});
+                yield return new TestCaseData(0).Returns(null);
             }
         }
 

@@ -20,15 +20,13 @@ namespace FibExtension
                 throw new ArgumentException($"{nameof(n)} must be bigger than 0");
             }
 
-            BigInteger[] result = new BigInteger[n];
 
-            int i = 0;
-            foreach (BigInteger item in Fibonacci(n))
+            if (n == 0)
             {
-                result[i++] =  item;
+                return null;
             }
 
-            return result;
+            return Fibonacci(n);
         }
 
         /// <summary>
@@ -43,13 +41,8 @@ namespace FibExtension
         /// <exception cref="ArgumentException">
         /// Throw when n less than 0
         /// </exception>
-        private static IEnumerable<BigInteger?> Fibonacci(int n)
+        private static IEnumerable<BigInteger> Fibonacci(int n)
         {   
-            if (n == 0)
-            {
-                yield return null;
-            }
-
             BigInteger prev = 0;
             BigInteger next = 1;
 

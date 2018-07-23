@@ -22,7 +22,7 @@ namespace FibExtension.Test
         }
 
         [Test, TestCaseSource(nameof(LongGenerateFibbonachiSequence))]
-        public IEnumerable FibonacciSequenceEnumerable(int length) => FibExtension.Fibonacci(length);
+        public IEnumerable FibonacciSequenceEnumerable(int length) => FibExtension.FibonacciSequence(length);
 
         public static IEnumerable ExceptionTest
         {
@@ -36,7 +36,7 @@ namespace FibExtension.Test
         [Test, TestCaseSource(nameof(ExceptionTest))]
         public void Exceprion_Fibonacci_ArgumentException(int n)
         {
-            Assert.Throws<ArgumentException>(() => FibExtension.Fibonacci(n).First());
+            Assert.Throws<ArgumentException>(() => FibExtension.FibonacciSequence(n));
         }
     }
 }

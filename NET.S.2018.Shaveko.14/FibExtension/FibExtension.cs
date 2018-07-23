@@ -13,6 +13,18 @@ namespace FibExtension
     /// </summary>
     public static class FibExtension
     {
+        /// <summary>
+        /// Fibonacci sequence
+        /// </summary>
+        /// <param name="n">
+        /// Count of memners
+        /// </param>
+        /// <returns>
+        /// Fibonacci sequence
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        /// Throw when n less than 0
+        /// </exception>
         public static IEnumerable<BigInteger> FibonacciSequence(int n)
         {
             if (n < 0)
@@ -36,11 +48,8 @@ namespace FibExtension
         /// Count of Fibonacci sequence
         /// </param>
         /// <returns>
-        /// Array of Fibonacci sequence
+        /// Fibonacci sequence
         /// </returns>
-        /// <exception cref="ArgumentException">
-        /// Throw when n less than 0
-        /// </exception>
         private static IEnumerable<BigInteger> Fibonacci(int n)
         {   
             BigInteger prev = 0;

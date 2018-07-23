@@ -25,12 +25,13 @@ namespace FibExtension
         /// <exception cref="ArgumentException">
         /// Throw when n less than 0
         /// </exception>
-        public static IEnumerable<BigInteger> Fibonacci(int n)
+        public static IEnumerable<BigInteger?> Fibonacci(int n)
         {
-            if (n < 0)
+            Validation(n);
+            
+            if (n == 0)
             {
-                throw new ArgumentException($"{nameof(n)} must be bigger than 0");
-
+                yield return null;
             }
 
             long prev = 0;
@@ -42,6 +43,15 @@ namespace FibExtension
                 long tmp = prev + next;
                 prev = next;
                 next = tmp;
+            }
+        }
+
+        private static void Validation(int n)
+        {
+            if (n < 0)
+            {
+                throw new ArgumentException($"{nameof(n)} must be bigger than 0");
+
             }
         }
     }

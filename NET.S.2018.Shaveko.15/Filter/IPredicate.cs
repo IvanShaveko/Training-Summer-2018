@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenericFilter
+namespace Filter
 {
-    public class Class1
+    public interface IPredicate<T>
     {
+        bool IsMatch(T item);
     }
 }

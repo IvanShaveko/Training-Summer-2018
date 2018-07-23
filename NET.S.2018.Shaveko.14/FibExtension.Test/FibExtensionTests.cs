@@ -1,5 +1,7 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections;
+using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
@@ -8,23 +10,33 @@ namespace FibExtension.Test
     [TestFixture]
     public class FibExtensionTests
     {
-        [TestCase(10, ExpectedResult = new[] { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 })]
-        [TestCase(0, ExpectedResult = new[] { 0 })]
-        [TestCase(1, ExpectedResult = new[] { 1 })]
-        [TestCase(3, ExpectedResult =new[] { 1, 1, 2 })]
-
-        [Test]
-        public int[] Extension_Count_Success(int n)
+        
+        public static IEnumerable LongGenerateFibbonachiSequence
         {
-            return FibExtension.Fibonacci(n);
+            get
+            {
+                yield return new TestCaseData(5).Returns(new BigInteger[] {0, 1, 1, 2, 3});
+                yield return new TestCaseData(10).Returns(new BigInteger[] {0, 1, 1, 2, 3, 5, 8, 13, 21, 34});
+                yield return new TestCaseData(1).Returns(new BigInteger[] {0});
+            }
         }
 
-        [TestCase(-2)]
-        
-        [Test]
-        public void FibExtension_ArgumentNullExceprion_ArrayNull(int n)
+        [Test, TestCaseSource(nameof(LongGenerateFibbonachiSequence))]
+        public IEnumerable FibonacciSequenceEnumerable(int length) => FibExtension.Fibonacci(length);
+
+        public static IEnumerable ExceptionTest
         {
-            Assert.Throws<ArgumentException>(() => FibExtension.Fibonacci(n));
+            get
+            {
+                yield return new TestCaseData(-2);
+                yield return new TestCaseData(-5);
+            }
+        }
+
+        [Test, TestCaseSource(nameof(ExceptionTest))]
+        public void Exceprion_Fibonacci_ArgumentException(int n)
+        {
+            Assert.Throws<ArgumentException>(() => FibExtension.Fibonacci(n).First());
         }
     }
 }

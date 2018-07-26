@@ -80,5 +80,13 @@ namespace BinarySearchTree.Tests
             return tree.Contains(item);
         }
 
+        [Test]
+        public void BinarySearchTree_Contains_Book()
+        {
+            var book = new[] {new Book("I"), new Book("Ok"), new Book("Ro"), new Book("Lok") };
+            var tree = new BinarySearchTree<Book>(new []{new Book("I"), new Book("Ok"), new Book("Lok"), new Book("Ro")});
+
+            Assert.IsTrue(tree.Contains(book[1]));
+        }
     }
 }

@@ -13,12 +13,6 @@ namespace Matrix
     /// <typeparam name="T"></typeparam>
     public abstract class Matrix<T> : IEnumerable<T>
     {
-        #region Fields
-
-        protected T[,] _matrix;
-
-        #endregion
-
         #region Properties
         
         /// <summary>
@@ -47,7 +41,6 @@ namespace Matrix
             }
 
             Order = order;
-            _matrix = new T[order, order];
         }
 
         /// <summary>
@@ -75,7 +68,6 @@ namespace Matrix
             }
 
             Order = matrix.GetLength(0);
-            _matrix = new T[Order, Order];
         }
 
         #endregion
@@ -93,11 +85,17 @@ namespace Matrix
         /// Value of i and j
         /// </returns>
         public T this[int i, int j] {
-            get => GetValue(i, j);
+            get
+            {
+                ValidateMatrix(i, j);
+                return GetValue(i, j);
+            }
             set
             {
+                ValidateMatrix(i, j);
+
                 var oldValue = GetValue(i, j);
-                _matrix[i, j] = value;
+                SetValue(value, i, j);
                 OnChangeElement(this, new MatrixEventArgs<T>(i, j, oldValue, value));
             }
         }
@@ -114,7 +112,7 @@ namespace Matrix
             {
                 for (int j = 0; j < Order; j++)
                 {
-                    yield return _matrix[i, j];
+                    yield return GetValue(i, j);
                 }
             }
         }
@@ -155,6 +153,24 @@ namespace Matrix
         }
 
         /// <summary>
+        /// Validate matrix
+        /// </summary>
+        /// <param name="i">
+        /// Row
+        /// </param>
+        /// <param name="j">
+        /// Colum
+        /// </param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        private void ValidateMatrix(int i, int j)
+        {
+            if (i < 0 || j < 0 || i > Order || j > Order)
+            {
+                throw new ArgumentOutOfRangeException($"{nameof(i)} or {nameof(j)} is out of range");
+            }
+        }
+
+        /// <summary>
         /// GetValue
         /// </summary>
         /// <param name="i">
@@ -163,10 +179,20 @@ namespace Matrix
         /// <param name="j">
         /// Column
         /// </param>
-        /// <returns></returns>
-        private T GetValue(int i, int j)
-        {
-            return _matrix[i, j];
-        }
+        protected abstract T GetValue(int i, int j);
+
+        /// <summary>
+        /// SetValue
+        /// </summary>
+        /// <param name="value">
+        /// Value
+        /// </param>
+        /// <param name="i">
+        /// Row
+        /// </param>
+        /// <param name="j">
+        /// Column
+        /// </param>
+        protected abstract void SetValue(T value, int i, int j);
     }
 }

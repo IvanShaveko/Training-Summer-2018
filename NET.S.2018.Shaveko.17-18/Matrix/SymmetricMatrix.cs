@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Matrix
 {
-    public class SymmetricMatrix<T> : SquareMatrix<T>
+    public class SymmetricMatrix<T> : Matrix<T>
     {
+        private T[] _triangle;
+ 
         /// <summary>
         /// Constructor of matrix with order
         /// </summary>
@@ -19,6 +21,7 @@ namespace Matrix
         /// </exception>
         public SymmetricMatrix(int order) : base(order)
         {
+            _triangle = new T[Order * Order];
         }
 
         /// <summary>
@@ -30,42 +33,40 @@ namespace Matrix
         /// <exception cref="ArgumentNullException">
         /// Throws when array is null
         /// </exception>
-        /// <exception cref="ArgumentException">
-        /// Throws when array is not square or symmetric
-        /// </exception>
         public SymmetricMatrix(T[,] matrix) : base(matrix)
         {
-            if (!CheckMatrix(matrix))
-            {
-                throw new ArgumentException($"{nameof(matrix)} does not symmetric");
-            }
-
-            Array.Copy(matrix, _matrix, Order * Order);
-        }
-
-        /// <summary>
-        /// Check array on symmetric matrix
-        /// </summary>
-        /// <param name="matrix">
-        /// Matrix
-        /// </param>
-        /// <returns>
-        /// True or false
-        /// </returns>
-        private bool CheckMatrix(T[,] matrix)
-        {
+            _triangle = new T[Order * Order];
+            
             for (int i = 0; i < Order; i++)
             {
-                for (int j = 0; j < Order; j++)
+                for (int j = i; j < Order; j++)
                 {
-                    if (!Equals(matrix[i, j], matrix[j, i]))
+                    _triangle[GetIndex(i, j)] = matrix[i, j];
+                }
+            }
+        }
+
+        protected override T GetValue(int i, int j) => _triangle[GetIndex(i, j)];
+
+        protected override void SetValue(T value, int i, int j) => _triangle[GetIndex(i, j)] = value;
+
+        private int GetIndex(int i, int j)
+        {
+            int result = 0;
+            for (int k = 0; k < Order; k++)
+            {
+                for (int z = k; z < Order; z++)
+                {
+                    if ((i == k) && (j == z))
                     {
-                        return false;
+                        return result;
                     }
+
+                    result++;
                 }
             }
 
-            return true;
+            return result;
         }
     }
 }

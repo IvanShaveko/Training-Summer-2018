@@ -8,6 +8,8 @@ namespace Matrix
 {
     public class SquareMatrix<T> : Matrix<T>
     {
+        private T[] _matrix;
+
         /// <summary>
         /// Constructor of matrix with order
         /// </summary>
@@ -35,7 +37,20 @@ namespace Matrix
         /// </exception>
         public SquareMatrix(T[,] matrix) : base(matrix)
         {
-            Array.Copy(matrix, _matrix, Order * Order);
+            _matrix = new T[Order * Order];
+            for (int i = 0; i < Order; i++)
+            {
+                for (int j = 0; j < Order; j++)
+                {
+                    _matrix[GetIndex(i, j)] = matrix[i, j];
+                }
+            }
         }
+
+        private int GetIndex(int i, int j) => i * Order + j;
+
+        protected override T GetValue(int i, int j) => _matrix[GetIndex(i, j)];
+
+        protected override void SetValue(T value, int i, int j) => _matrix[GetIndex(i, j)] = value;
     }
 }

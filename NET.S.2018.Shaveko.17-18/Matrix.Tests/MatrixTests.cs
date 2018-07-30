@@ -28,7 +28,6 @@ namespace Matrix.Tests
             expected = new SquareMatrix<int>(arrayExpected);
             CollectionAssert.AreEqual(expected, result);
 
-            array = new[,] { { 1, 0, 0 }, { 0, 5, 0 }, { 0, 0, 9 } };
             rhs = new SymmetricMatrix<int>(array);
             result = lhs.Add(rhs);
             CollectionAssert.AreEqual(expected, result);

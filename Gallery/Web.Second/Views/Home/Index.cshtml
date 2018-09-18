@@ -1,0 +1,30 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Web.Second.Models.Image>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    @Html.Action("List", Model)
+
+
+<div class="layout">
+    <div class="col1">
+        <h3>Колонка 1</h3>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable /Content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using '/Content here, /Content here', making it look like readable English.
+        </p>
+    </div>
+    <div class="col2">
+        <h3>Колонка 2</h3>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable /Content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using '/Content here, /Content here', making it look like readable English.
+        </p>
+    </div>
+    <div class="col3">
+        <h3>Колонка 3</h3>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable /Content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using '/Content here, /Content here', making it look like readable English.
+        </p>
+    </div>
+</div>
